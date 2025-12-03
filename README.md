@@ -14,23 +14,18 @@ A lightweight REST API built using FastAPI, SQLite, and SQLAlchemy, complete wit
 
 ---
 ## Tech Stack
-<div align="center">
-
-| Technology | Badge |
-|-----------|--------|
-| **Python 3.9+** | ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python&logoColor=white) |
-| **FastAPI** | ![FastAPI](https://img.shields.io/badge/FastAPI-Framework-009688?logo=fastapi&logoColor=white) |
-| **SQLite** | ![SQLite](https://img.shields.io/badge/SQLite-Database-044A64?logo=sqlite&logoColor=white) |
-| **SQLAlchemy** | ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-CA3C24?logo=sqlalchemy&logoColor=white) |
-| **Passlib** | ![Passlib](https://img.shields.io/badge/Passlib-Hashing-1E88E5) |
-| **PyJWT** | ![PyJWT](https://img.shields.io/badge/PyJWT-Tokens-FF6F00) |
-| **OAuth2PasswordBearer** | ![OAuth2](https://img.shields.io/badge/OAuth2-Bearer_Tokens-1976D2) |
-| **Pydantic** | ![Pydantic](https://img.shields.io/badge/Pydantic-Validation-E92063?logo=pydantic&logoColor=white) |
-
-</div>
+| Technology | Badge | Description |
+|------------|--------|-------------|
+| **Python 3.9+** | ![Python](https://img.shields.io/badge/Python-3.9+-555?style=for-the-badge&logo=python&logoColor=white&labelColor=3776AB) | Core programming language used for the backend. |
+| **FastAPI** | ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white) | High-performance API framework built on ASGI. |
+| **SQLite** | ![SQLite](https://img.shields.io/badge/SQLite-044A64?style=for-the-badge&logo=sqlite&logoColor=white) | Lightweight file-based database used for development. |
+| **SQLAlchemy** | ![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-CA3C24?style=for-the-badge&logo=sqlalchemy&logoColor=white) | ORM for interacting with database models. |
+| **Pydantic** | ![Pydantic](https://img.shields.io/badge/Pydantic-E92063?style=for-the-badge&logo=pydantic&logoColor=white) | Data validation and settings management. |
+| **OAuth2** | ![OAuth2](https://img.shields.io/badge/OAuth2-1976D2?style=for-the-badge) | Authentication scheme used for secure token access. |
 
 ---
 ## API Endpoints Overview
+  
 ### Authentication
 
 | Method | Endpoint       | Description                          |
