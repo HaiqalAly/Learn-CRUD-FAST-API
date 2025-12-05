@@ -78,7 +78,7 @@ The refactored project structure separates concerns into logical directories:
 ## Installation
 ### 1. Clone the repository
 ```bash
-[https://github.com/HaiqalAly/Learn-CRUD-FastAPI](https://github.com/HaiqalAly/Learn-CRUD-FastAPI)
+git clone https://github.com/HaiqalAly/Learn-CRUD-FastAPI
 ```
 
 ### 2. Create a Virtual Environtment
