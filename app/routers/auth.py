@@ -10,6 +10,9 @@ from app.schemas.user import UserCreate, UserResponse, Token
 from app.core import security
 from app.core.config import settings
 
+from app.dependencies import get_current_active_user
+from app.database.models import User
+
 router = APIRouter(tags=["Authentication"])
 
 @router.post("/register", response_model=UserResponse, status_code=201)
@@ -46,3 +49,7 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db:
         data={"sub": user.email}, expires_delta=access_token_expires
     )
     return {"access_token": access_token, "token_type": "bearer"}
+
+@router.get("/verify-token")
+def verify_token(current_user: User = Depends(get_current_active_user)):
+    return {"message": "Token is valid!", "user_email": current_user.email}

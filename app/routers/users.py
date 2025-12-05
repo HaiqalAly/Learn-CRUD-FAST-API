@@ -6,6 +6,8 @@ from app.database.database import get_db
 from app.database.models import User
 from app.schemas.user import UserResponse, UserCreate
 from app.dependencies import get_current_active_user
+from app.core import security
+from app.schemas.user import UserCreate
 
 router = APIRouter(
     prefix="/users",
@@ -54,3 +56,22 @@ def delete_user(user_id: int, current_user: User = Depends(get_current_active_us
     db.commit()
     return
 
+@router.post("/", response_model=UserResponse, status_code=201)
+def create_user(user: UserCreate, db: Session = Depends(get_db), current_user: User = Depends(get_current_active_user)):
+    """
+    Creates a new user account. Requires an active user (e.g., Admin) token.
+    """
+    if db.query(User).filter(User.email == user.email).first():
+        raise HTTPException(status_code=400, detail="Email already registered!")
+    
+    hashed_password = security.get_password_hash(user.password)
+    new_user = User(
+        name=user.name,
+        email=user.email,
+        role=user.role,
+        hashed_pwd=hashed_password
+    )
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+    return new_user
